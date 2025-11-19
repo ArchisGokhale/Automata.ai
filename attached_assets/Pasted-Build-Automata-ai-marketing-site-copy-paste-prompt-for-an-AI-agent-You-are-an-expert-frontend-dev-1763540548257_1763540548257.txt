@@ -1,0 +1,220 @@
+Build Automata.ai marketing site — copy-paste prompt for an AI agent
+
+You are an expert frontend developer, UI/UX designer, and accessibility engineer.
+Your job: generate a production-ready React website (single-page smooth-scrolling marketing site) for Automata.ai with a clean, modern aesthetic. Follow every instruction exactly and produce runnable code (Vite + React + TypeScript + TailwindCSS) with all files, components, styles, README, and build instructions. Do not invent extra pages — the site must contain only the sections below.
+
+High-level requirements
+
+Single-page, smooth-scrolling marketing site (desktop-first, fully responsive).
+
+Clean, minimal aesthetic — airy spacing, neutral greys, high-contrast text, single accent color (Automata.ai cyan #00D1FF). Rounded corners ~10px.
+
+Typography: Inter (or system sans), large readable headings, compact body font.
+
+Motion: subtle entrance animations + smooth-scrolling. Use Framer Motion for tasteful motion, and scroll-behavior: smooth for anchor scrolling. No heavy, distracting animations.
+
+Accessibility: semantic HTML, proper heading order, alt tags, keyboard focus styles, ARIA where needed.
+
+SEO & social: meta tags for title/description, Open Graph image (placeholder), favicon.
+
+No client-side user accounts. No unnecessary JS bundles. Keep it fast (Lighthouse-friendly).
+
+Pages / Sections (single-page anchors)
+
+Include a fixed top navigation bar with links that scroll to anchors: Home (Hero), Pricing, About, Contact, Internships, Download.
+
+Hero / Intro (id="home")
+
+Full-width hero with headline (big), 1–2 line subhead describing Automata.ai (what it does), one primary CTA: Download Desktop App (link to release file or /downloads URL). Secondary CTA: See Pricing (scrolls to pricing).
+
+Small product screenshot/illustration to the right (SVG/PNG placeholder).
+
+Microcopy: one-sentence value prop and one-line privacy/trust note (e.g., "No source code leaves your machine unless you opt in").
+
+Features blurbs (below hero)
+
+3–4 concise feature cards (icon, short title, 1 sentence). Example features: "Auto-detect JS/TS", "Suggest test cases", "Generate Playwright scripts", "Run in Playwright MCP".
+
+Keep copy punchy and technical-savvy but approachable.
+
+Pricing (id="pricing")
+
+3 plan cards: Free / Pro / Enterprise.
+
+Each card: price, monthly/annual toggle (toggle updates values), 3–6 bullets of what's included, CTA button (Download / Contact Sales for Enterprise).
+
+Add micro-FAQ line: “Cancel anytime. Billing via Stripe” (or placeholder).
+
+About (id="about")
+
+Short mission statement (2–3 lines).
+
+One horizontal band with 3–4 company values or timeline bullets (founded, team, ethos).
+
+Optional small team strip with 3 placeholders (name + role + avatar placeholder).
+
+Internships (id="internships")
+
+Small recruitment landing: short intro, list of open internship roles (title + 2–3 bullet requirements), CTA: Apply that opens a modal or scrolls to contact form with file upload for resume (accept .pdf/.docx).
+
+Form fields: name, email, role applying for (select), short message, resume upload. Submitting should call a stubbed backend endpoint /api/apply (accepts multipart form) or integrate with Formspree if no backend. Show success/failure toasts.
+
+Contact (id="contact")
+
+Simple contact form: name, email, subject, message. Submit posts to /api/contact (stub) and displays a toast success. Also show one support email and Twitter/Github links.
+
+Footer
+
+Small site links, copyright, privacy link, small “Built by Automata.ai” line.
+
+Interactions & UX details
+
+Navigation is sticky and collapses into a hamburger on narrow screens.
+
+Smooth scroll: use native CSS + JS fallback. Highlight active nav item while scrolling.
+
+Download button: opens a modal showing OS options (macOS .dmg, Windows .exe, Linux AppImage) with direct links. If a release file is not provided, the button triggers a download-modal with email capture (optional).
+
+Forms must validate client-side with friendly inline errors.
+
+Show loading states for form submissions and disable repeated clicks.
+
+Show accessible focus ring on interactive elements.
+
+Tech stack & dev setup (required)
+
+Vite + React + TypeScript
+
+TailwindCSS + @tailwindcss/typography plugin
+
+Framer Motion for animations
+
+react-hook-form + Zod for form validation
+
+Optional: axios for HTTP calls
+
+Husky + lint-staged + ESLint + Prettier config (basic)
+
+Build scripts: dev, build, preview, format, lint
+
+CLI starter snippet (AI should include in README):
+
+npm create vite@latest automata-website -- --template react-ts
+cd automata-website
+npm install
+# install Tailwind, Framer Motion, react-hook-form, zod, axios
+npm run dev
+
+File structure to produce
+/src
+  /components
+    Navbar.tsx
+    Hero.tsx
+    FeatureCard.tsx
+    PricingToggle.tsx
+    PricingCard.tsx
+    ContactForm.tsx
+    InternshipForm.tsx
+    Footer.tsx
+    DownloadModal.tsx
+  /sections
+    HomeSection.tsx
+    FeaturesSection.tsx
+    PricingSection.tsx
+    AboutSection.tsx
+    InternshipsSection.tsx
+    ContactSection.tsx
+  App.tsx
+  main.tsx
+/assets
+  logo.svg
+  hero.png (placeholder)
+  og-image.png (placeholder)
+index.html
+tailwind.config.ts
+postcss.config.js
+
+Styling / design tokens
+
+Colors:
+
+Background: #0F172A (if you prefer dark) or light #FAFBFC (specify which — default to light). Use neutral greys.
+
+Accent: #00D1FF (Automata cyan)
+
+Muted text: #6B7280
+
+Spacing: generous padding (64px top hero on desktop).
+
+Border radius: 0.625rem (10px).
+
+Shadows: subtle shadow-lg for cards.
+
+(If you must pick: default to light theme unless instructed otherwise.)
+
+Accessibility & SEO checklist (must implement)
+
+Proper <h1> on hero; semantic headings for each section.
+
+aria-label and role attributes on nav and modals.
+
+Forms use <label> correctly.
+
+Images with alt.
+
+Meta tags: title, description, og:title, og:description, og:image, twitter card.
+
+Sitemap.xml and robots.txt templates (placeholders).
+
+Integrations & deliverables
+
+Provide a working contact form stub (/api/contact) that logs to console and returns 200 (serverless function or mock). Also include Formspree integration comment for real email wiring.
+
+Internship apply endpoint /api/apply that accepts multipart/form-data and stores the file under /uploads (for demo only) or returns success. (If serverless is not desired, wire forms to Formspree or Google Forms but include server stub.)
+
+Provide a production-ready README.md with setup, env variables (if any), linting, build & deploy steps.
+
+Include screenshots of the site (generated or placeholders) and demo GIF instructions.
+
+Copy / content guidance (include placeholder copy)
+
+AI should insert short, punchy copy placeholders that match a developer/audience voice and can be quickly edited:
+
+Hero heading: Automata.ai — Automated tests, made human-friendly.
+Hero subhead: Detect JS/TS files, generate test ideas, expand to Playwright steps, and run them with Playwright MCP — all with one click.
+CTA: Download Desktop App
+Pricing bullets and About copy: 2–3 short sentences each. Internship role bullets: 3–5 concise requirements.
+
+Performance & Lighthouse
+
+Keep images optimized (use srcset or small placeholders).
+
+No unused big libraries.
+
+Ensure preconnect for fonts if loading Inter from Google or use local font fallback.
+
+Deliverable checklist (what AI must output)
+
+Full project code (Vite + React + TS + Tailwind) ready to npm install && npm run dev.
+
+All components and sections implemented, with accessible markup and smooth scrolling behavior.
+
+Download modal with OS options (placeholders).
+
+Pricing toggle (monthly/annual) working.
+
+Contact and Internship forms with client validation and mock endpoints.
+
+README with setup, build, and deployment instructions.
+
+SEO meta tags and favicon placeholders.
+
+Explanatory comments where dynamic URLs (download links, email inbox) must be filled by the owner.
+
+Final instructions for the AI agent
+
+Produce complete, runnable code and include a short demo GIF or steps to replicate the demo.
+
+If any external resource (images, downloads, email) cannot be created, the AI must create clear placeholders and explain exactly where the site owner should add the real assets and creds.
+
+Keep the UI clean, fast and developer-focused. No extraneous pages or links.
