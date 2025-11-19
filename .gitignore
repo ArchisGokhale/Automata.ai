@@ -146,3 +146,8 @@ vite.config.ts.*
 
 # Local repl / editor state
 .local/
+
+# Additional editor / local files
+.vscode/
+Thumbs.db
+.env.local
