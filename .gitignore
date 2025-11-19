@@ -140,14 +140,11 @@ vite.config.ts.timestamp-*
 
 # Project specific
 .DS_Store
-server/public
-vite.config.ts.*
+server/
+dist/
+node_modules/
 *.tar.gz
-
-# Local repl / editor state
 .local/
-
-# Additional editor / local files
 .vscode/
 Thumbs.db
-.env.local
+.env*
