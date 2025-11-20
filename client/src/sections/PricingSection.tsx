@@ -8,7 +8,7 @@ export default function PricingSection() {
   const plans = [
     {
       plan: "Free",
-      price: "$0",
+      price: "₹0",
       features: [
         "Up to 500 generated tests/mo",
         "Basic Playwright exports",
@@ -20,8 +20,9 @@ export default function PricingSection() {
     },
     {
       plan: "Pro",
-      price: isAnnual ? "$29" : "$39",
+      price: "Custom",
       features: [
+        "Everything in Free, plus:",
         "Unlimited generated tests",
         "Advanced edge case detection",
         "CI/CD integration pipeline",
@@ -35,6 +36,7 @@ export default function PricingSection() {
       plan: "Enterprise",
       price: "Custom",
       features: [
+        "Everything in Pro, plus:",
         "On-premise deployment",
         "Custom LLM fine-tuning",
         "SSO & Audit logs",
