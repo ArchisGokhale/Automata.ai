@@ -1,0 +1,84 @@
+PROMPT START ————————————————————————————
+
+Create a clean, modern, Automata.ai-styled comparison section and insert it right after the “Built for modern engineering teams” section and before the Pricing section.
+
+Brand Aesthetic to Follow:
+
+White, light grey, and subtle gradient backgrounds
+
+Rounded cards, soft shadows, minimal borders
+
+Neon-accent green (#3FFFA8) for success/tick icons
+
+Typography similar to Automata’s current site (bold headlines, clean sans-serif body text)
+
+Smooth-scrolling layout, minimalistic spacing, elegant separation lines
+
+Consistent styling with existing Automata.ai components
+
+Section Title
+
+“Manual Testing vs Automation Testing vs Automata”
+Subtitle: A modern, developer-first way to test software.
+
+Design Requirements
+
+Use a 3-column comparison table inside elevated cards.
+
+Each cell should include:
+
+A green tick icon for advantages
+
+A neutral grey dot for limitations
+
+Keep the entire section visually symmetric and matching Automata’s dashboard-style UI.
+
+Add subtle hover effects on cards (scale 1.01 or light shadow lift).
+
+Ensure the section is fully responsive with stacked columns on mobile.
+
+Padding should be generous (top + bottom 80–120px).
+
+Section must feel like a native part of the website—not externally bolted on.
+
+TABLE CONTENT (USE EXACTLY AS BELOW, WITH TICKS)
+
+Use green ticks (✓) for strengths and grey dots (•) for weaknesses.
+Automata should visually stand out with stronger ticks or slight highlight.
+
+Category	Manual Testing	Automation Testing	Automata
+Setup Effort	• High effort	• Medium — framework setup	✓ Near-zero — auto-detects tests & components
+Speed of Test Creation	• Slow	• Moderate	✓ Instant — generate tests in one click
+Skill Required	✓ Low	• High (scripting/tools)	✓ Low — natural language to tests
+Coverage Quality	• Inconsistent	• Good but engineer-dependent	✓ High — AI-suggested scenarios & edge cases
+Maintenance Effort	• Very high	• High	✓ Low — update or regenerate instantly
+Scalability	• Poor	• Moderate	✓ Excellent — supports unlimited test creation
+Privacy & Security	✓ Local	• Varies by infra	✓ Local-first — code stays on device
+
+Design notes:
+
+“Automata” column should use a subtle highlight background to emphasize superiority
+
+Green ticks must be bright (#3FFFA8) and consistent across all cells
+
+Use minimal text and lots of whitespace
+
+Overall Layout
+
+Title centered
+
+Subtitle slightly faded gray (#666)
+
+Table placed inside a wide container with rounded edges
+
+Consider a soft gradient background (#F8F9FB → #FFFFFF)
+
+Add a divider line below to transition smoothly into the Pricing section
+
+Final Deliverable
+
+Return a complete, production-ready UI section in your best modern design style.
+Match Automata.ai’s tone: clean, developer-first, fast, elegant.
+Generate the layout, visual styling, and markup exactly as it should appear on a premium SaaS landing page.
+
+PROMPT END —————————————————————————————

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HomeSection from "@/sections/HomeSection";
 import FeaturesSection from "@/sections/FeaturesSection";
+import ComparisonSection from "@/sections/ComparisonSection";
 import PricingSection from "@/sections/PricingSection";
 import AboutSection from "@/sections/AboutSection";
 import InternshipsSection from "@/sections/InternshipsSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <HomeSection />
         <FeaturesSection />
+        <ComparisonSection />
         <PricingSection />
         <AboutSection />
         <InternshipsSection />
