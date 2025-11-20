@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ThemeToggle } from './ThemeToggle';
 import logo from '@assets/generated_images/Minimalist_logo_for_Automata.ai_fb74cde2.png';
 
 export default function Navbar() {
@@ -36,7 +37,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
@@ -46,6 +47,7 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <ThemeToggle />
           <a 
             href="#home" 
             className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
@@ -54,13 +56,17 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden p-2 text-muted-foreground hover:text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        {/* Mobile Toggle and Theme */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button 
+            className="p-2 text-muted-foreground hover:text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+            data-testid="button-mobile-menu-toggle"
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
