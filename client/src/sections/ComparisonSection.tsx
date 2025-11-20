@@ -73,7 +73,7 @@ export default function ComparisonSection() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
           >
-            Manual Testing vs Automation Testing vs Automata
+            Automata vs Manual Testing vs Automation Testing
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
