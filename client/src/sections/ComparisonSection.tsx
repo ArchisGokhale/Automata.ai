@@ -100,14 +100,14 @@ export default function ComparisonSection() {
               <div className="p-6 font-semibold text-sm text-muted-foreground uppercase tracking-wider">
                 Category
               </div>
+              <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50 bg-primary/5">
+                Automata
+              </div>
               <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50">
                 Manual Testing
               </div>
               <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50">
                 Automation Testing
-              </div>
-              <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50 bg-primary/5">
-                Automata
               </div>
             </div>
 
@@ -120,11 +120,11 @@ export default function ComparisonSection() {
                 <div className="p-6 font-medium text-sm">
                   {row.category}
                 </div>
-                <ComparisonCellDesktop cell={row.manual} />
-                <ComparisonCellDesktop cell={row.automation} />
                 <div className="bg-primary/5">
                   <ComparisonCellDesktop cell={row.automata} highlight />
                 </div>
+                <ComparisonCellDesktop cell={row.manual} />
+                <ComparisonCellDesktop cell={row.automation} />
               </div>
             ))}
           </div>
@@ -145,11 +145,11 @@ export default function ComparisonSection() {
                 <h3 className="font-semibold text-base">{row.category}</h3>
               </div>
               <div className="p-4 space-y-4">
-                <ComparisonCellMobile title="Manual Testing" cell={row.manual} />
-                <ComparisonCellMobile title="Automation Testing" cell={row.automation} />
-                <div className="bg-primary/5 -mx-4 -mb-4 p-4 rounded-b-xl">
+                <div className="bg-primary/5 -mx-4 p-4">
                   <ComparisonCellMobile title="Automata" cell={row.automata} highlight />
                 </div>
+                <ComparisonCellMobile title="Manual Testing" cell={row.manual} />
+                <ComparisonCellMobile title="Automation Testing" cell={row.automation} />
               </div>
             </motion.div>
           ))}
