@@ -12,7 +12,7 @@ export default function AboutSection() {
     { name: "Devanshi Singh", role: "Co-Founder / Engineer" },
   ];
   return (
-    <section id="about" className="py-24 border-y border-border/50 bg-card/30">
+    <section id="about" className="py-24">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-bold mb-6">Our Mission</h2>

@@ -27,11 +27,11 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-secondary/30 border-y border-border/50">
+    <section id="features" className="py-24">
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Built for modern engineering teams</h2>
-          <p className="text-muted-foreground text-lg">
+          <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">Built for modern engineering teams</h2>
+          <p className="text-white/80 text-lg">
             Stop writing boilerplate. Let Automata handle the setup so you can focus on shipping features.
           </p>
         </div>
