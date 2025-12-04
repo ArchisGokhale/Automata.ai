@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
+import WaitlistModal from './WaitlistModal';
 import logo from '@assets/generated_images/Minimalist_logo_for_Automata.ai_fb74cde2.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,12 +50,14 @@ export default function Navbar() {
             </a>
           ))}
           <ThemeToggle />
-          <a 
-            href="#home" 
-            className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+          <button 
+            onClick={() => setWaitlistOpen(true)}
+            className="relative bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-bold hover:from-primary/90 hover:to-primary/70 transition-all shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:scale-105 flex items-center gap-2 group overflow-hidden"
           >
-            Download
-          </a>
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+            <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+            <span className="relative">Join Waitlist</span>
+          </button>
         </div>
 
         {/* Mobile Toggle and Theme */}
@@ -89,17 +93,22 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a 
-                href="#home" 
-                className="bg-primary text-primary-foreground px-4 py-3 rounded-lg text-center font-semibold mt-2"
-                onClick={() => setIsOpen(false)}
+              <button 
+                onClick={() => {
+                  setWaitlistOpen(true);
+                  setIsOpen(false);
+                }}
+                className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-3 rounded-lg text-center font-bold mt-2 shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
               >
-                Download App
-              </a>
+                <Sparkles className="w-4 h-4" />
+                Join Waitlist
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <WaitlistModal open={waitlistOpen} onOpenChange={setWaitlistOpen} />
     </nav>
   );
 }
