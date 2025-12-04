@@ -142,4 +142,3 @@ node_modules/
 .local/
 .vscode/
 Thumbs.db
-.env*

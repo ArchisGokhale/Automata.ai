@@ -66,21 +66,12 @@ export default function WaitlistModal({ open, onOpenChange }: WaitlistModalProps
   });
 
   const onSubmit = async (data: WaitlistFormData) => {
-    console.log("Form submitted with data:", data);
-    console.log("Firebase config check:", {
-      apiKey: import.meta.env.VITE_FIREBASE_API_KEY ? "✓ Set" : "✗ Missing",
-      projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID ? "✓ Set" : "✗ Missing",
-      authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ? "✓ Set" : "✗ Missing"
-    });
-    
     setIsSubmitting(true);
     try {
-      console.log("Attempting to add document to Firestore...");
-      const docRef = await addDoc(collection(db, "waitlist"), {
+      await addDoc(collection(db, "waitlist"), {
         ...data,
         createdAt: serverTimestamp(),
       });
-      console.log("Document written with ID: ", docRef.id);
       
       setIsSuccess(true);
       
@@ -94,12 +85,9 @@ export default function WaitlistModal({ open, onOpenChange }: WaitlistModalProps
         description: "We'll be in touch soon with updates.",
       });
     } catch (error) {
-      console.error("Detailed error adding to waitlist:", error);
-      console.error("Error code:", error.code);
-      console.error("Error message:", error.message);
-      
+      console.error("Error adding to waitlist:", error);
       toast.error("Something went wrong", {
-        description: `Error: ${error.message || "Please try again or contact us directly."}`,
+        description: "Please try again or contact us directly.",
       });
     } finally {
       setIsSubmitting(false);
