@@ -85,7 +85,6 @@ export default function WaitlistModal({ open, onOpenChange }: WaitlistModalProps
         description: "We'll be in touch soon with updates.",
       });
     } catch (error) {
-      console.error("Error adding to waitlist:", error);
       toast.error("Something went wrong", {
         description: "Please try again or contact us directly.",
       });

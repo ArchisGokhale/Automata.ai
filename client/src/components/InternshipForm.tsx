@@ -34,7 +34,6 @@ export default function InternshipForm() {
     setIsSubmitting(true);
     try {
       // Stub API call
-      console.log("Submitting application:", values);
       await new Promise(resolve => setTimeout(resolve, 1500)); // Mock delay
       
       // In production: send Multipart form data

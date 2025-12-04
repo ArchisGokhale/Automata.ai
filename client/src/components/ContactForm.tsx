@@ -32,7 +32,6 @@ export default function ContactForm() {
     setIsSubmitting(true);
     try {
       // Stub API call
-      console.log("Submitting contact form:", values);
       await new Promise(resolve => setTimeout(resolve, 1000)); // Mock delay
       
       // In production: await axios.post('/api/contact', values);
