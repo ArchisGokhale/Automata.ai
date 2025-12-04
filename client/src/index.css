@@ -116,4 +116,19 @@
   .container-custom {
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
+  
+  /* Gradient Animation */
+  .animate-gradient-x {
+    background-size: 400% 400%;
+    animation: gradient-x 6s ease infinite;
+  }
+  
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 }

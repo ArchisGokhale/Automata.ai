@@ -60,9 +60,7 @@ export default function ComparisonSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-background" />
+    <section id="comparison" className="py-16 relative overflow-hidden">
       
       <div className="container-custom relative z-10">
         {/* Title and subtitle */}
@@ -71,7 +69,7 @@ export default function ComparisonSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white"
           >
             Automata vs Manual Testing vs Automation Testing
           </motion.h2>
@@ -80,7 +78,7 @@ export default function ComparisonSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg"
+            className="text-white/80 text-lg"
           >
             A modern, developer-first way to test software.
           </motion.p>
@@ -94,19 +92,19 @@ export default function ComparisonSection() {
           transition={{ delay: 0.2 }}
           className="hidden lg:block"
         >
-          <div className="bg-card rounded-xl shadow-lg border border-border/50 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-blue-900/20 backdrop-blur-sm rounded-xl shadow-lg border border-white/10 overflow-hidden hover:shadow-xl transition-shadow duration-300">
             {/* Table header */}
-            <div className="grid grid-cols-4 bg-secondary/30 border-b border-border/50">
-              <div className="p-6 font-semibold text-sm text-muted-foreground uppercase tracking-wider">
+            <div className="grid grid-cols-4 bg-blue-800/30 border-b border-white/10">
+              <div className="p-6 font-semibold text-sm text-white/70 uppercase tracking-wider">
                 Category
               </div>
-              <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50 bg-primary/5">
+              <div className="p-6 font-semibold text-sm text-white border-l border-white/10 bg-blue-500/20">
                 Automata
               </div>
-              <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50">
+              <div className="p-6 font-semibold text-sm text-white border-l border-white/10">
                 Manual Testing
               </div>
-              <div className="p-6 font-semibold text-sm text-foreground border-l border-border/50">
+              <div className="p-6 font-semibold text-sm text-white border-l border-white/10">
                 Automation Testing
               </div>
             </div>
@@ -115,12 +113,12 @@ export default function ComparisonSection() {
             {comparisonData.map((row, index) => (
               <div
                 key={index}
-                className="grid grid-cols-4 border-b border-border/30 last:border-b-0 hover:bg-secondary/20 transition-colors duration-200"
+                className="grid grid-cols-4 border-b border-white/10 last:border-b-0 hover:bg-blue-800/20 transition-colors duration-200"
               >
-                <div className="p-6 font-medium text-sm">
+                <div className="p-6 font-medium text-sm text-white">
                   {row.category}
                 </div>
-                <div className="bg-primary/5">
+                <div className="bg-blue-500/20">
                   <ComparisonCellDesktop cell={row.automata} highlight />
                 </div>
                 <ComparisonCellDesktop cell={row.manual} />
@@ -139,13 +137,13 @@ export default function ComparisonSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="bg-card rounded-xl shadow-md border border-border/50 overflow-hidden"
+              className="bg-blue-900/20 backdrop-blur-sm rounded-xl shadow-md border border-white/10 overflow-hidden"
             >
-              <div className="bg-secondary/30 p-4 border-b border-border/50">
-                <h3 className="font-semibold text-base">{row.category}</h3>
+              <div className="bg-blue-800/30 p-4 border-b border-white/10">
+                <h3 className="font-semibold text-base text-white">{row.category}</h3>
               </div>
               <div className="p-4 space-y-4">
-                <div className="bg-primary/5 -mx-4 p-4">
+                <div className="bg-blue-500/20 -mx-4 p-4">
                   <ComparisonCellMobile title="Automata" cell={row.automata} highlight />
                 </div>
                 <ComparisonCellMobile title="Manual Testing" cell={row.manual} />
@@ -156,10 +154,7 @@ export default function ComparisonSection() {
         </div>
       </div>
 
-      {/* Bottom divider */}
-      <div className="container-custom mt-24">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
+
     </section>
   );
 }
@@ -173,7 +168,7 @@ function ComparisonCellDesktop({
   highlight?: boolean;
 }) {
   return (
-    <div className="p-6 border-l border-border/50 flex items-start gap-3">
+    <div className="p-6 border-l border-white/10 flex items-start gap-3">
       <div className="flex-shrink-0 mt-0.5">
         {cell.isAdvantage ? (
           <div className="w-5 h-5 rounded-full bg-[#3FFFA8]/20 flex items-center justify-center">
@@ -189,7 +184,7 @@ function ComparisonCellDesktop({
           </div>
         )}
       </div>
-      <p className={`text-sm leading-relaxed ${highlight && cell.isAdvantage ? 'font-medium' : ''}`}>
+      <p className={`text-sm leading-relaxed text-white ${highlight && cell.isAdvantage ? 'font-medium' : ''}`}>
         {cell.text}
       </p>
     </div>

@@ -3,7 +3,7 @@ import { Mail, MessageSquare } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 bg-secondary/30">
+    <section id="contact" className="py-24">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
